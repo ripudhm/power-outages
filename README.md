@@ -18,10 +18,20 @@ This data set not only has data anout the major outages but also electricity con
 - 'OUTAGE.DURATION: Duration of outage events (in minutes)
 - CAUSE.CATEGORY: Categories of all the events causing the major power outages
 
-
-
-
 There are 3 parts to this report: 
 1. Exploratory Data Analysis
 2. Assessment of Missingness
 3. Permutation Testing
+
+## Exploratory Data Analysis
+
+### Data Cleaning
+
+
+### Univariate Analysis
+
+
+### Bivariate Analysis
+
+
+### Interesting Aggregates
