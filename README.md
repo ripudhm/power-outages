@@ -40,6 +40,8 @@ After looking at the data extensively there was no data that I had to replace wi
 
 ### Univariate Analysis
 
+<iframe src="assets/folium_map.html" width=800 height=600 frameBorder=0></iframe>
+The above map shows the number of major outages in the US by state. Notably, California seems to have a very high number of major power outages compared to other states. 
 
 ### Bivariate Analysis
 
