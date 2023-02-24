@@ -26,6 +26,16 @@ There are 3 parts to this report:
 ## Exploratory Data Analysis
 
 ### Data Cleaning
+After looking at the data extensively there was no data that I had to replace with NaN values since all of the missing values were already NaN. However, I still had to do some other data cleaning. The original dataset had the OUTAGE.START.DATE and OUTAGE.START.TIME as two distinct columns which is unnecessary and hard to work with since they were object dtypes in pandas. There being two columns for this data in some ways makes sense since it is likely that the Data Generating Process probably had 2 field for collecting information, one field for the date and another for the time. To make it easier to work with I combined the two columns into one OUTAGE.START column whose dtype is pd.datetime. OUTAGE.RESTORATION was also made in the same way since that was also in two columns. Using the start and end times for each outage it was now possible to cross check the OUTAGE.DURATION column in the original dataset. There were also missing values in the OUTAGE.DURATION column that could have been filled out using the start and end times, but it turns out that this was not possible due to OUTAGE.RESTORATION itself having missing values. At the end of the Data Cleaning process, this was what the data framce looked like: 
+
+|   YEAR |   MONTH | U.S._STATE   | POSTAL.CODE   | CLIMATE.REGION     | CLIMATE.CATEGORY   |   PC.REALGSP.STATE |   PC.REALGSP.REL |   POPULATION | OUTAGE.START        | OUTAGE.RESTORATION   |   OUTAGE.DURATION | CAUSE.CATEGORY     |
+|-------:|--------:|:-------------|:--------------|:-------------------|:-------------------|-------------------:|-----------------:|-------------:|:--------------------|:---------------------|------------------:|:-------------------|
+|   2011 |       7 | Minnesota    | MN            | East North Central | normal             |              51268 |          1.07738 |  5.34812e+06 | 2011-07-01 17:00:00 | 2011-07-03 20:00:00  |              3060 | severe weather     |
+|   2014 |       5 | Minnesota    | MN            | East North Central | normal             |              53499 |          1.08979 |  5.45712e+06 | 2014-05-11 18:38:00 | 2014-05-11 18:39:00  |                 1 | intentional attack |
+|   2010 |      10 | Minnesota    | MN            | East North Central | cold               |              50447 |          1.06683 |  5.3109e+06  | 2010-10-26 20:00:00 | 2010-10-28 22:00:00  |              3000 | severe weather     |
+|   2012 |       6 | Minnesota    | MN            | East North Central | normal             |              51598 |          1.07148 |  5.38044e+06 | 2012-06-19 04:30:00 | 2012-06-20 23:00:00  |              2550 | severe weather     |
+|   2015 |       7 | Minnesota    | MN            | East North Central | warm               |              54431 |          1.09203 |  5.48959e+06 | 2015-07-18 02:00:00 | 2015-07-19 07:00:00  |              1740 | severe weather     |
+
 
 
 ### Univariate Analysis
