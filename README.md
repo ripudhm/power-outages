@@ -45,5 +45,18 @@ The above map shows the number of major outages in the US by state. Notably, Cal
 
 ### Bivariate Analysis
 
+<iframe src="assets/month_count.html" width=800 height=600 frameBorder=0></iframe>
+This graph shows the number of major power outages by month in the US. There seems to be significant seasonal variation in the number of majoe power outages since there are a lot more in the June compared to December. 
+
+<iframe src="assets/cause_by_month.html" width=800 height=600 frameBorder=0></iframe>
+To investigate further into these seasonal variations the cause was added to the graph. This shows that the only cause to significantly vary across the months is severe weather. 
 
 ### Interesting Aggregates
+
+| CLIMATE.CATEGORY   |    mean |   count |
+|:-------------------|--------:|--------:|
+| cold               | 2656.96 |     463 |
+| normal             | 2530.98 |     730 |
+| warm               | 2817.32 |     283 |
+
+This was one of the most interesting aggregates fromt he data set, showing the mean outage duration for cold, normal and warm climate places. The average outage duration for warm places seems to be higher than that of cold and normal climate places. 
