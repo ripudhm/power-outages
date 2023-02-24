@@ -76,7 +76,20 @@ The missingness dependency was tested using permutations tests. The OUTAGE.DURAT
 
 
 
-| variable           |   p_value |   observed_statistic |\n|:-------------------|----------:|---------------------:|\n| YEAR               |     1     |             0.659477 |\n| U.S._STATE         |     1     |             0.470204 |\n| POSTAL.CODE        |     1     |             0.470204 |\n| CLIMATE.REGION     |     1     |             0.317388 |\n| CLIMATE.CATEGORY   |     1     |             0.31847  |\n| PC.REALGSP.STATE   |     0.982 |             0.781511 |\n| PC.REALGSP.REL     |     0.986 |             0.781511 |\n| POPULATION         |     0.966 |             0.771984 |\n| CUSTOMERS.AFFECTED |     0.988 |             0.656115 |\n| OUTAGE.START       |     0.218 |             0.509527 |\n| OUTAGE.RESTORATION |     0.043 |             0.5      |\n| CAUSE.CATEGORY     |     0.998 |             0.266799 |
+| variable           |   p_value |   observed_statistic |
+|:-------------------|----------:|---------------------:|
+| YEAR               |     1     |             0.659477 |
+| U.S._STATE         |     0.998 |             0.470204 |
+| POSTAL.CODE        |     1     |             0.470204 |
+| CLIMATE.REGION     |     1     |             0.317388 |
+| CLIMATE.CATEGORY   |     1     |             0.31847  |
+| PC.REALGSP.STATE   |     0.992 |             0.781511 |
+| PC.REALGSP.REL     |     0.982 |             0.781511 |
+| POPULATION         |     0.95  |             0.771984 |
+| CUSTOMERS.AFFECTED |     0.994 |             0.656115 |
+| OUTAGE.START       |     0.176 |             0.509527 |
+| OUTAGE.RESTORATION |     0.104 |             0.5      |
+| CAUSE.CATEGORY     |     1     |             0.266799 |
 
 The permutation test was run for all the variables in the dataset and the above table was the result for each of them. The missingness in the OUTAGE.DURATION columns is not dependent on most variables. For example, the YEAR column with a p-value of 1 seems to be independent of the missingness of the OUTAGE.DURATION column. The only column that is dependent seems to be the OUTAGE.RESTORATION column. This makes sense since the OUTAGE.DURATION column has missing values when the OUTAGE.RESTORATION column has missing values. 
 
