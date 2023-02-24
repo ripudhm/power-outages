@@ -9,14 +9,14 @@ This data set not only has data anout the major outages but also electricity con
 - U.S._STATE: Represents all the states in the continental U.S.
 - POSTAL.CODE: Represents the postal code of the U.S. states
 - CLIMATE.REGION: U.S. Climate regions as specified by National Centers for Environmental Information (nine climatically consistent regions in continental U.S.A.)
-- CLIMATE.CATEGORY: This represents the climate episodes corresponding to the years. The categories "Warm", "Cold" or "Normal" episodes of the climate are based on a threshold of $\text{\textperthousand}$ 0.5 ^O^C for the Oceanic Nino Index (ONI)
-- PC.REALGSP.STATE:
-- PC.REALGSP.REL: 
-- POPULATION: 
-- OUTAGE.START: 
-- OUTAGE.RESTORATION: 
-- 'OUTAGE.DURATION: 
-- CAUSE.CATEGORY: 
+- CLIMATE.CATEGORY: This represents the climate episodes corresponding to the years. The categories "Warm", "Cold" or "Normal" episodes of the climate are based on a threshold of *$\text{\plusminus}$* 0.5 *^O^* C for the Oceanic Nino Index (ONI)
+- PC.REALGSP.STATE: Per capita real gross state product (GSP) in the U.S. state (measured in 2009 chained U.S. dollars)
+- PC.REALGSP.REL: Relative per capita real GSP as compared to the total per capita real GDP of the U.S. (expressed as fraction of per capita State real GDP & per capita US real GDP)
+- POPULATION: Population in the U.S. state in a year
+- OUTAGE.START: Indicates when the outage event started
+- OUTAGE.RESTORATION: Indicates when power was restored to all the customers
+- 'OUTAGE.DURATION: Duration of outage events (in minutes)
+- CAUSE.CATEGORY: Categories of all the events causing the major power outages
 
 
 
