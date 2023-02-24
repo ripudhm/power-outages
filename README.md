@@ -75,9 +75,29 @@ The column for CUSTOMERS.AFFECTED could be NMAR (Not Missing At Random) in this 
 The missingness dependency was tested using permutations tests. The OUTAGE.DURATION column was chosen to test on. 
 
 
+
 | variable           |   p_value |   observed_statistic |\n|:-------------------|----------:|---------------------:|\n| YEAR               |     1     |             0.659477 |\n| U.S._STATE         |     1     |             0.470204 |\n| POSTAL.CODE        |     1     |             0.470204 |\n| CLIMATE.REGION     |     1     |             0.317388 |\n| CLIMATE.CATEGORY   |     1     |             0.31847  |\n| PC.REALGSP.STATE   |     0.982 |             0.781511 |\n| PC.REALGSP.REL     |     0.986 |             0.781511 |\n| POPULATION         |     0.966 |             0.771984 |\n| CUSTOMERS.AFFECTED |     0.988 |             0.656115 |\n| OUTAGE.START       |     0.218 |             0.509527 |\n| OUTAGE.RESTORATION |     0.043 |             0.5      |\n| CAUSE.CATEGORY     |     0.998 |             0.266799 |
 
 The permutation test was run for all the variables in the dataset and the above table was the result for each of them. The missingness in the OUTAGE.DURATION columns is not dependent on most variables. For example, the YEAR column with a p-value of 1 seems to be independent of the missingness of the OUTAGE.DURATION column. The only column that is dependent seems to be the OUTAGE.RESTORATION column. This makes sense since the OUTAGE.DURATION column has missing values when the OUTAGE.RESTORATION column has missing values. 
 
 <iframe src="assets/YEAR_missing.html" width=800 height=600 frameBorder=0></iframe>
 The above plot shows the distribution of the YEAR variables when the OUTAGE.DURATION vales are missing and not missing. 
+
+## Permutation Testing
+
+As indicated in the title of the report, a permutation test will be conducted in order to answer the question **"Is climate an important characteristic of major power outages in the United States?"** 
+
+- Null hypothesis: The climate and outage duration are not related - the high average outage duration of warm climate places is due to chance alone.
+
+- Alternative hypothesis: The climate and outage duration are related - the high average outage duration of warm climate places is not due to chance alone. 
+
+- Test statistic: The average outage duration was used as the test statistic here to keep the analysis straightforward and interpretable. 
+
+- Significance level: A significance level of 5% was chosen.
+
+- P-value: The p-value obtained from the permutation test was 0.72. 
+
+- Conclusion: Since this p-value is greater than the significance level of 0.05, we fail to reject the null hypothesis and conclude that the average outage duration of warm places seems to have come from the same distribution as that of the outage duration of all major power outages in the dataset. 
+
+<iframe src="assets/emp_dist_perm.html" width=800 height=600 frameBorder=0></iframe>
+Finally, the above graph shows the empirical distribution of the average outaeg duration. The red line indicated the observed statistic and as can be seen in the graph the observed statistic appears to be a fairly common value in the distribution. 
