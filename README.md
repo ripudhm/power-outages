@@ -13,10 +13,12 @@ This data set not only has data anout the major outages but also electricity con
 - PC.REALGSP.STATE: Per capita real gross state product (GSP) in the U.S. state (measured in 2009 chained U.S. dollars)
 - PC.REALGSP.REL: Relative per capita real GSP as compared to the total per capita real GDP of the U.S. (expressed as fraction of per capita State real GDP & per capita US real GDP)
 - POPULATION: Population in the U.S. state in a year
+- CUSTOMERS.AFFECTED: Number of customers affected by the power outage event
 - OUTAGE.START: Indicates when the outage event started
 - OUTAGE.RESTORATION: Indicates when power was restored to all the customers
 - 'OUTAGE.DURATION: Duration of outage events (in minutes)
 - CAUSE.CATEGORY: Categories of all the events causing the major power outages
+
 
 There are 3 parts to this report: 
 1. Exploratory Data Analysis
@@ -65,5 +67,17 @@ This was one of the most interesting aggregates fromt he data set, showing the m
 
 ### NMAR Analysis
 
+The column for CUSTOMERS.AFFECTED could be NMAR (Not Missing At Random) in this dataset. While it could be the case that the company that had the major outage is not able to find the exact number of customers that were affected due to the incident, it is likely that they do not want such kind of information to be public even if they do have access to the data. If people found out that millions of customers lost power this could have a negative impact of the percieved brand of the company and their present and future customers might look for alternatives. Hence, if the number of customers affected is a very large number the company might be incentivised to not make such information public in order to protect its interests. 
+
 ### Missingness Dependency
 
+
+The missingness dependency was tested using permutations tests. The OUTAGE.DURATION column was chosen to test on. 
+
+
+| variable           |   p_value |   observed_statistic |\n|:-------------------|----------:|---------------------:|\n| YEAR               |     1     |             0.659477 |\n| U.S._STATE         |     1     |             0.470204 |\n| POSTAL.CODE        |     1     |             0.470204 |\n| CLIMATE.REGION     |     1     |             0.317388 |\n| CLIMATE.CATEGORY   |     1     |             0.31847  |\n| PC.REALGSP.STATE   |     0.982 |             0.781511 |\n| PC.REALGSP.REL     |     0.986 |             0.781511 |\n| POPULATION         |     0.966 |             0.771984 |\n| CUSTOMERS.AFFECTED |     0.988 |             0.656115 |\n| OUTAGE.START       |     0.218 |             0.509527 |\n| OUTAGE.RESTORATION |     0.043 |             0.5      |\n| CAUSE.CATEGORY     |     0.998 |             0.266799 |
+
+The permutation test was run for all the variables in the dataset and the above table was the result for each of them. The missingness in the OUTAGE.DURATION columns is not dependent on most variables. For example, the YEAR column with a p-value of 1 seems to be independent of the missingness of the OUTAGE.DURATION column. The only column that is dependent seems to be the OUTAGE.RESTORATION column. This makes sense since the OUTAGE.DURATION column has missing values when the OUTAGE.RESTORATION column has missing values. 
+
+<iframe src="assets/YEAR_missing.html" width=800 height=600 frameBorder=0></iframe>
+The above plot shows the distribution of the YEAR variables when the OUTAGE.DURATION vales are missing and not missing. 
